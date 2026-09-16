@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #f2f5f0;
+  --color-bg-alt: #e8ede5;
+  --color-panel: #ffffff;
+  --color-ink: #142420;
+  --color-teal: #12332e;
+  --color-teal-light: #1f4a42;
+  --color-gold: #d9a23b;
+  --color-clay: #b85c3e;
+  --color-muted: #5b6b63;
+  --color-line: #c6d0c2;
+
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-medium;
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-2 outline-gold outline-offset-[3px];
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto max-w-[1120px] px-[28px];
+  }
+}
