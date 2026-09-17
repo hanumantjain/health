@@ -5,6 +5,7 @@ import {
   BRAND_NAME,
   CONTACT_EMAIL,
   OFFICE_ADDRESS,
+  WHATSAPP_NUMBER_DISPLAY,
   footerConciergeLinks,
   footerLegalLinks,
   footerSpecialtyLinks,
@@ -78,7 +79,7 @@ export function Footer() {
             <div className="flex flex-col gap-1.5 pt-2 text-xs">
               <div className="flex items-center gap-2 font-bold text-brand-navy">
                 <MaterialIcon name="call" className="text-[16px] text-brand-cyan-deep" />
-                +91 98100 00000 (Direct / WhatsApp)
+                {WHATSAPP_NUMBER_DISPLAY} (Direct / WhatsApp)
               </div>
               <div className="flex items-center gap-2 text-text-muted">
                 <MaterialIcon name="mail" className="text-[16px] text-brand-cyan-deep" />

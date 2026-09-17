@@ -2,7 +2,13 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { MaterialIcon } from './icons/MaterialIcon';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
-import { BRAND_NAME, CONTACT_EMAIL, OFFICE_ADDRESS, WHATSAPP_NUMBER } from '../data/content';
+import {
+  BRAND_NAME,
+  CONTACT_EMAIL,
+  OFFICE_ADDRESS,
+  WHATSAPP_NUMBER,
+  WHATSAPP_NUMBER_DISPLAY,
+} from '../data/content';
 
 interface IntakeFormState {
   name: string;
@@ -95,7 +101,7 @@ export function ContactSection() {
                     <span className="text-[10px] font-bold uppercase tracking-wider text-slate-300">
                       Direct WhatsApp Flight Desk
                     </span>
-                    <p className="text-sm font-bold text-white">+91 98100 00000</p>
+                    <p className="text-sm font-bold text-white">{WHATSAPP_NUMBER_DISPLAY}</p>
                     <span className="text-xs text-slate-400">
                       Available in English, Arabic, Russian
                     </span>
