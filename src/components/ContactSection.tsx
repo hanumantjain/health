@@ -13,15 +13,15 @@ import {
 interface IntakeFormState {
   name: string;
   country: string;
-  phone: string;
   specialty: string;
+  travelTime: string;
 }
 
 const initialFormState: IntakeFormState = {
   name: '',
   country: '',
-  phone: '',
   specialty: '',
+  travelTime: '',
 };
 
 const countries = [
@@ -47,6 +47,14 @@ const specialtyOptions = [
   'Other Specialty',
 ];
 
+const travelTimeOptions = [
+  'As soon as possible',
+  'Within 1 month',
+  '1–3 months',
+  '3–6 months',
+  'Just exploring options',
+];
+
 const fieldClass =
   'w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan';
 const selectClass =
@@ -65,7 +73,7 @@ export function ContactSection() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const text = encodeURIComponent(
-      `Hello ${BRAND_NAME},\n\n*New Patient Case Inquiry:*\n- *Name:* ${form.name}\n- *Country:* ${form.country}\n- *Phone:* ${form.phone}\n- *Specialty:* ${form.specialty}\n\nPlease let me know the process for doctor review, hospital estimate, and flight medical visa.`
+      `Hello ${BRAND_NAME},\n\n*New Patient Case Inquiry:*\n- *Name:* ${form.name}\n- *Country:* ${form.country}\n- *Specialty:* ${form.specialty}\n- *Preferred Travel Time:* ${form.travelTime}\n\nPlease let me know the process for doctor review, hospital estimate, and flight medical visa.`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
   };
@@ -193,18 +201,25 @@ export function ContactSection() {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="patientPhone" className="text-xs font-semibold text-white">
-                      WhatsApp / Phone Number
+                    <label htmlFor="travelTime" className="text-xs font-semibold text-white">
+                      Preferred Travel Time
                     </label>
-                    <input
-                      id="patientPhone"
-                      type="tel"
-                      placeholder="With country code"
+                    <select
+                      id="travelTime"
                       required
-                      className={fieldClass}
-                      value={form.phone}
-                      onChange={handleChange('phone')}
-                    />
+                      className={selectClass}
+                      value={form.travelTime}
+                      onChange={handleChange('travelTime')}
+                    >
+                      <option disabled value="">
+                        Select timeframe
+                      </option>
+                      {travelTimeOptions.map((option) => (
+                        <option value={option} key={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="specialtySelect" className="text-xs font-semibold text-white">
