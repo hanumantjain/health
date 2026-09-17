@@ -1,53 +1,24 @@
-import type { CSSProperties } from 'react';
-
-const waypointLabelStyle: CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '12px',
-  fill: 'var(--color-teal)',
-};
-
-const subLabelStyle: CSSProperties = {
-  fontFamily: 'var(--font-sans)',
-  fontSize: '11px',
-  fill: 'var(--color-muted)',
-};
-
 interface RouteGraphicProps {
   className?: string;
 }
 
 export function RouteGraphic({ className }: RouteGraphicProps) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 480 220"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M30 170 C 140 40, 340 40, 450 170"
-        fill="none"
-        stroke="#C6D0C2"
-        strokeWidth="2"
-        strokeDasharray="6 7"
-      />
-      <circle cx="30" cy="170" r="5" fill="#12332E" />
-      <text x="10" y="196" style={waypointLabelStyle}>
-        YOUR CITY
-      </text>
-      <text x="14" y="212" style={subLabelStyle}>
-        Case shared online
-      </text>
-      <circle cx="450" cy="170" r="5" fill="#D9A23B" />
-      <text x="372" y="196" style={waypointLabelStyle}>
-        NEW DELHI
-      </text>
-      <text x="378" y="212" style={subLabelStyle}>
-        Treated &amp; discharged
-      </text>
-      <g transform="translate(232,45) rotate(20)">
-        <path d="M0 8 L20 0 L0 -8 L4 0 Z" fill="#B85C3E" />
+    <svg className={className} viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 40 90 Q 200 10 360 90" fill="none" stroke="#CBD5E1" strokeDasharray="6 6" strokeWidth="2" />
+      <path d="M 40 90 Q 200 10 260 42" fill="none" stroke="#00AEEF" strokeWidth="3" />
+      <g transform="translate(254, 38) rotate(22)">
+        <circle cx="0" cy="0" r="15" fill="#0A3871" />
+        <path
+          d="M-5 -2 L4 -2 L6 -6 L8 -6 L6 -2 L10 -2 L11 -4 L13 -4 L12 0 L13 4 L11 4 L10 2 L6 2 L8 6 L6 6 L4 2 L-5 2 Z"
+          fill="#00AEEF"
+          transform="scale(0.85) translate(-4, 0)"
+        />
       </g>
+      <circle cx="40" cy="90" r="7" fill="#0A3871" />
+      <circle cx="40" cy="90" r="13" stroke="#00AEEF" strokeOpacity="0.4" strokeWidth="2.5" />
+      <circle cx="360" cy="90" r="7" fill="#00AEEF" />
+      <circle cx="360" cy="90" r="13" stroke="#0A3871" strokeOpacity="0.3" strokeWidth="2.5" />
     </svg>
   );
 }

@@ -10,11 +10,11 @@ import { ContactSection } from '../components/ContactSection';
 
 export function Home() {
   useEffect(() => {
-    document.title = 'Setu Health: Your Bridge to Care in India';
+    document.title = 'HealthFlyIndia | Fly to India for World-Class Healthcare';
   }, []);
 
   return (
-    <main id="top">
+    <main id="top" className="w-full">
       <Hero />
       <TrustStrip />
       <Specialties />
