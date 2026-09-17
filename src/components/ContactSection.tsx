@@ -58,7 +58,8 @@ export function ContactSection() {
   const handleChange =
     (field: keyof IntakeFormState) =>
     (event: FormEvent<HTMLInputElement | HTMLSelectElement>) => {
-      setForm((prev) => ({ ...prev, [field]: event.currentTarget.value }));
+      const { value } = event.currentTarget;
+      setForm((prev) => ({ ...prev, [field]: value }));
     };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
