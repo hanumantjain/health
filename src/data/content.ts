@@ -1,6 +1,6 @@
 export const BRAND_NAME = 'HealthFlyIndia';
-export const WHATSAPP_NUMBER = '919582314349';
-export const WHATSAPP_NUMBER_DISPLAY = '+91 95823 14349';
+export const WHATSAPP_NUMBER = '919540479798';
+export const WHATSAPP_NUMBER_DISPLAY = '+91 95404 79798';
 export const CONTACT_EMAIL = 'care@healthflyindia.com';
 export const OFFICE_ADDRESS = 'Diplomatic Enclave, Chanakyapuri, New Delhi 110021';
 
