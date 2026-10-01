@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { LogoMark } from './icons/LogoMark';
+import { Logo } from './icons/Logo';
 import { MaterialIcon } from './icons/MaterialIcon';
 import { BRAND_NAME, WHATSAPP_NUMBER, navLinks } from '../data/content';
 
@@ -58,8 +58,11 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-white/95 shadow-[0_2px_12px_rgba(10,56,113,0.06)] backdrop-blur-xl">
       <div className="wrap flex h-20 items-center justify-between gap-6">
         <a href="/#top" className="group flex shrink-0 items-center gap-3 no-underline">
-          <LogoMark className="h-10 w-10 shrink-0 transition-transform group-hover:scale-[1.03]" />
-          <span className="hidden flex-col border-l border-border-subtle pl-3 sm:flex">
+          <Logo
+            compactOnMobile
+            className="h-10 shrink-0 transition-transform group-hover:scale-[1.03]"
+          />
+          <span className="hidden flex-col border-l border-border-subtle pl-3 xl:flex">
             <span className="text-xs font-bold leading-tight tracking-tight text-brand-navy">
               Fly to India for
             </span>
@@ -94,7 +97,7 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-3">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20${encodeURIComponent(
-              BRAND_NAME
+              BRAND_NAME,
             )},%20I%20would%20like%20a%20free%20medical%20opinion.`}
             className="hidden items-center gap-2 rounded-full border border-brand-cyan-light bg-brand-ice px-3.5 py-2 text-xs font-semibold text-brand-navy no-underline transition-all hover:bg-brand-cyan-light/40 md:inline-flex"
             target="_blank"

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LogoMark } from './icons/LogoMark';
+import { Logo } from './icons/Logo';
 import { MaterialIcon } from './icons/MaterialIcon';
 import {
   BRAND_NAME,
@@ -17,9 +17,8 @@ export function Footer() {
       <div className="wrap pt-14 pb-8 md:pt-[3.5rem]">
         <div className="grid grid-cols-1 gap-8 pb-14 md:grid-cols-2 lg:grid-cols-12">
           <div className="flex flex-col gap-3 lg:col-span-4">
-            <a href="/#top" className="flex items-center gap-2 no-underline">
-              <LogoMark className="h-10 w-10" />
-              <span className="text-base font-extrabold text-brand-navy">{BRAND_NAME}</span>
+            <a href="/#top" className="flex items-center no-underline">
+              <Logo className="h-11" />
             </a>
             <p className="text-xs leading-relaxed text-text-muted">
               Fly to India for world-class healthcare. Facilitating dignified international
