@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from './icons/Logo';
 import { MaterialIcon } from './icons/MaterialIcon';
-import { BRAND_NAME, WHATSAPP_NUMBER, navLinks } from '../data/content';
+import { navLinks } from '../data/content';
 
 const MOBILE_NAV_QUERY = '(max-width: 1023px)';
 
@@ -56,7 +56,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border-subtle bg-white/95 shadow-[0_2px_12px_rgba(10,56,113,0.06)] backdrop-blur-xl">
-      <div className="wrap flex h-20 items-center justify-between gap-6">
+      <div className="flex h-20 w-full items-center justify-between gap-6 px-5 md:px-10 lg:px-12">
         <a href="/#top" className="group flex shrink-0 items-center gap-3 no-underline">
           <Logo
             compactOnMobile
@@ -76,7 +76,7 @@ export function Header() {
           ref={navRef}
           id="navlinks"
           inert={isCollapsed}
-          className={`items-center gap-1 rounded-full border border-brand-cyan-light bg-brand-ice/80 p-1 text-xs transition-[max-height,opacity] duration-200 ease-out max-[1023px]:fixed max-[1023px]:inset-x-0 max-[1023px]:top-[80px] max-[1023px]:flex-col max-[1023px]:items-stretch max-[1023px]:gap-2 max-[1023px]:overflow-hidden max-[1023px]:rounded-none max-[1023px]:border-x-0 max-[1023px]:border-t-0 max-[1023px]:bg-white max-[1023px]:px-[20px] lg:flex ${
+          className={`items-center gap-1 rounded-full border border-brand-cyan-light bg-brand-ice/80 p-1 text-xs transition-[max-height,opacity] duration-200 ease-out max-[1023px]:fixed max-[1023px]:inset-x-0 max-[1023px]:top-[80px] max-[1023px]:flex-col max-[1023px]:items-stretch max-[1023px]:gap-2 max-[1023px]:overflow-hidden max-[1023px]:rounded-none max-[1023px]:border-x-0 max-[1023px]:border-t-0 max-[1023px]:bg-white max-[1023px]:px-5 lg:flex ${
             isOpen
               ? 'flex max-[1023px]:max-h-[320px] max-[1023px]:border-b max-[1023px]:border-border-subtle max-[1023px]:py-[18px] max-[1023px]:opacity-100'
               : 'hidden max-[1023px]:max-h-0 max-[1023px]:py-0 max-[1023px]:opacity-0 lg:flex'
@@ -95,20 +95,6 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-3">
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20${encodeURIComponent(
-              BRAND_NAME,
-            )},%20I%20would%20like%20a%20free%20medical%20opinion.`}
-            className="hidden items-center gap-2 rounded-full border border-brand-cyan-light bg-brand-ice px-3.5 py-2 text-xs font-semibold text-brand-navy no-underline transition-all hover:bg-brand-cyan-light/40 md:inline-flex"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-cyan opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-cyan" />
-            </span>
-            WhatsApp Desk
-          </a>
           <a
             href="/#start-case"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-navy to-brand-cyan-deep px-5 py-2.5 text-xs font-bold text-white no-underline shadow-md shadow-brand-navy/15 transition-all hover:scale-[1.02] hover:brightness-110"

@@ -10,10 +10,11 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { href: '/#medical-specialties', label: 'Specialties' },
-  { href: '/#how-it-works', label: 'Pathway' },
-  { href: '/#accredited-hospitals', label: 'Hospitals' },
-  { href: '/#services-included', label: 'Inclusions' },
+  { href: '/#top', label: 'Home' },
+  { href: '/doctors', label: 'Doctors' },
+  { href: '/hospitals', label: 'Hospitals' },
+  { href: '/#medical-specialties', label: 'Treatments' },
+  { href: '/#how-it-works', label: 'How It Works' },
   { href: '/#patient-stories', label: 'Stories' },
 ];
 
