@@ -1,5 +1,15 @@
 import { MaterialIcon } from './icons/MaterialIcon';
-import { hospitalPartners } from '../data/content';
+import { Link } from 'react-router-dom';
+import { HospitalCard } from './HospitalCard';
+import { hospitals } from '../data/hospitals';
+
+const FEATURED_COUNT = 8;
+
+// Largest multi-specialty centres first, so the homepage leads with the broadest options.
+const featuredHospitals = [...hospitals]
+  .filter((hospital) => hospital.multiSpecialty)
+  .sort((a, b) => (b.treatmentCount ?? 0) - (a.treatmentCount ?? 0))
+  .slice(0, FEATURED_COUNT);
 
 export function Hospitals() {
   return (
@@ -32,33 +42,19 @@ export function Hospitals() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {hospitalPartners.map((hospital) => (
-            <div
-              className="flex flex-col overflow-hidden rounded-2xl border border-border-subtle bg-white shadow-sm transition-all hover:border-brand-cyan/40 hover:shadow-lg"
-              key={hospital.name}
-            >
-              <div className="relative flex h-44 w-full items-center justify-center bg-gradient-to-br from-brand-navy to-brand-cyan-deep">
-                <MaterialIcon name={hospital.icon} className="text-[52px] text-white/25" />
-                <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full border border-brand-cyan-light bg-white/95 px-2.5 py-0.5 text-xs font-bold text-brand-navy shadow-sm backdrop-blur-md">
-                  <MaterialIcon name="shield" className="text-[13px] text-brand-cyan-deep" />
-                  JCI &bull; NABH
-                </div>
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-6">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-cyan-deep">
-                    {hospital.location}
-                  </span>
-                  <h3 className="mt-1 text-base font-bold text-brand-navy">{hospital.name}</h3>
-                  <p className="mt-2 text-xs text-text-muted">{hospital.description}</p>
-                </div>
-                <div className="-mx-6 -mb-6 mt-4 flex items-center justify-between border-t border-brand-cyan-light/40 bg-brand-ice px-6 py-3 pt-3 text-xs text-text-muted">
-                  <span className="font-medium">{hospital.beds}</span>
-                  <span className="font-medium text-brand-cyan-deep">{hospital.desk}</span>
-                </div>
-              </div>
-            </div>
+          {featuredHospitals.map((hospital) => (
+            <HospitalCard hospital={hospital} key={hospital.slug} />
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            to="/hospitals"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-navy to-brand-cyan-deep px-6 py-3 text-sm font-bold text-white no-underline shadow-md shadow-brand-navy/15 transition-all hover:scale-[1.02] hover:brightness-110"
+          >
+            View all {hospitals.length} hospitals
+            <MaterialIcon name="arrow_forward" className="text-[18px]" />
+          </Link>
         </div>
       </div>
     </section>

@@ -174,54 +174,6 @@ export const journeySteps: JourneyStep[] = [
   },
 ];
 
-export interface HospitalPartner {
-  icon: string;
-  location: string;
-  name: string;
-  description: string;
-  beds: string;
-  desk: string;
-}
-
-export const hospitalPartners: HospitalPartner[] = [
-  {
-    icon: 'cardiology',
-    location: 'New Delhi (South)',
-    name: 'Max Super Speciality',
-    description:
-      'Centers of Excellence in Oncology, Bone Marrow, Robotic Joint Replacement, and complex neuro-interventions.',
-    beds: '850+ Beds',
-    desk: 'Arabic & Russian Desk',
-  },
-  {
-    icon: 'emergency',
-    location: 'Gurugram (Delhi NCR)',
-    name: 'Medanta – The Medicity',
-    description:
-      'Founded by a renowned heart surgery team. Recognized for organ transplants and cardiovascular care.',
-    beds: '1,250+ Beds',
-    desk: 'Intl. ICU Wing',
-  },
-  {
-    icon: 'local_hospital',
-    location: 'New Delhi (Central)',
-    name: 'Apollo Hospitals',
-    description:
-      'Pioneers in pediatric liver transplants, robotic cardiology, proton beam cancer therapy, and genetic screening.',
-    beds: '710+ Beds',
-    desk: 'Halal Food Certified',
-  },
-  {
-    icon: 'biotech',
-    location: 'Gurugram (Delhi NCR)',
-    name: 'Fortis Memorial (FMRI)',
-    description:
-      "Asia's leading pediatric bone marrow transplant wing, CyberKnife robotics, and advanced IVF fertility lab.",
-    beds: '400+ Beds',
-    desk: 'French & Swahili Desk',
-  },
-];
-
 export interface ServiceItem {
   name: string;
   tagVariant: 'included' | 'markup';
